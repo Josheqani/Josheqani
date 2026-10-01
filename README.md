@@ -1,12 +1,12 @@
 # Hey there 👋
 
-I'm **Ali**, a front-end developer from Iran 🇮🇷, building fast, user-friendly web apps with **React** and **Next.js**, and growing into full-stack on **Cloudflare Workers**.
+I'm **Ali**, a front-end developer from Iran 🇮🇷, building fast, user-friendly web apps with **React** and **Next.js**.
 
-🛠️ **Stack:** TypeScript · React · Next.js · Vite · Tailwind CSS · Hono · D1
+🛠️ **Stack:** TypeScript · React · Next.js · Vite · Tailwind CSS · Framer Motion
+☁️ **Also familiar with:** Hono, Cloudflare Workers
 📫 **Reach me:** [Telegram](https://t.me/josheqani)
 
 > *"Programming is like a vast galaxy. The more you explore, the more you realize that there are still so many stars left to discover!"*
-<h3 align="left">⚡ Languages</h3>
 
 ###
 
