@@ -4,14 +4,15 @@ export const aboutData: AboutData = {
   title: "About",
   subtitle: "A bit of background.",
   paragraphs: [
-    "I’ve spent seven years making software easier to use, first at an agency and now on my own. I like small teams, clear problems, and projects where I can touch everything from the wireframe to the deploy.",
-    "Outside work I take film photos and play the santur, badly.",
+    "I’m a front-end developer from Iran with 3+ years of professional experience, working mostly with React and Next.js. I care about performance, motion, and RTL-first interfaces.",
+    "Currently at ShaliCompany, focusing on fast, accessible interfaces, fluid micro-interactions, and the small details that make web applications feel great to use.",
   ],
-  photoPlaceholderText: "Your photo here",
+  photoPlaceholderText: "Ali Josheqani",
   facts: [
-    { label: "Based in", value: "Tehran" },
-    { label: "Tools", value: "Figma, React, Tailwind" },
-    { label: "Languages", value: "Persian, English" },
-    { label: "Availability", value: "Open from December" },
+    { label: "Role", value: "Front-end Developer" },
+    { label: "Current", value: "ShaliCompany" },
+    { label: "Daily Stack", value: "TypeScript, React, Next.js, Tailwind" },
+    { label: "Also Use", value: "Motion, Drizzle, Cloudflare" },
+    { label: "Based in", value: "Iran" },
   ],
 };

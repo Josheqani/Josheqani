@@ -2,7 +2,7 @@ import type { HeroData } from "@/types/hero";
 import { siteConfig } from "@/data/site-config";
 
 const firstName = process.env.NEXT_PUBLIC_HERO_FIRST_NAME || "Ali";
-const lastName = process.env.NEXT_PUBLIC_HERO_LAST_NAME || "Josheghani";
+const lastName = process.env.NEXT_PUBLIC_HERO_LAST_NAME || "Josheqani";
 
 const resolvedTitleLines: [string, string] =
   firstName && lastName
@@ -12,18 +12,17 @@ const resolvedTitleLines: [string, string] =
         if (parts.length >= 2) {
           return [parts[0], parts.slice(1).join(" ")];
         }
-        return [parts[0] || "Ali", parts[1] || "Josheghani"];
+        return [parts[0] || "Ali", parts[1] || "Josheqani"];
       })();
 
 export const heroData: HeroData = {
   titleLines: resolvedTitleLines,
   lead: {
     prefix: "I’m a ",
-    highlight: "product designer and front-end developer",
+    highlight: "front-end developer",
     suffix:
-      ". I design interfaces and build them myself, so nothing gets lost between the mockup and the browser.",
+      " from Iran with 3+ years of professional experience, working mostly with React and Next.js. I care about performance, motion, and RTL-first interfaces.",
   },
   status:
-    process.env.NEXT_PUBLIC_HERO_STATUS ||
-    "Building a budgeting app for freelancers",
+    process.env.NEXT_PUBLIC_HERO_STATUS || "Currently at ShaliCompany",
 };

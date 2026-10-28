@@ -9,7 +9,7 @@ export function PhotoPlaceholder({ label, className }: PhotoPlaceholderProps) {
   return (
     <div
       className={cn(
-        "grid place-items-center rounded-[6px] border-[1.5px] border-dashed border-border-dashed-subtle font-display text-[15px] font-medium text-muted aspect-[16/10] min-[761px]:aspect-[4/5] mb-[28px]",
+        "grid place-items-center rounded-full border-[1.5px] border-dashed border-border-dashed-subtle font-display text-[15px] font-medium text-muted aspect-square w-[200px] sm:w-[240px] min-[761px]:w-[260px] mb-[28px]",
         className
       )}
     >

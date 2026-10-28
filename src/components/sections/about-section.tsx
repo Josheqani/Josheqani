@@ -1,15 +1,23 @@
 import type { AboutData } from "@/types/about";
 import { aboutData as defaultAboutData } from "@/data/about";
+import { siteConfig } from "@/data/site-config";
+import { getGithubAvatar } from "@/lib/github";
 import { Section } from "@/components/layout/section";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
+import { GithubAvatarCard } from "@/components/ui/github-avatar-card";
 import { FactList } from "@/components/ui/fact-list";
 
 interface AboutSectionProps {
   data?: AboutData;
+  githubUsername?: string;
 }
 
-export function AboutSection({ data = defaultAboutData }: AboutSectionProps) {
+export async function AboutSection({
+  data = defaultAboutData,
+  githubUsername = siteConfig.githubUsername,
+}: AboutSectionProps) {
+  const githubProfile = await getGithubAvatar(githubUsername);
+
   return (
     <Section id="about">
       <SectionHeading title={data.title} subtitle={data.subtitle} />
@@ -25,7 +33,12 @@ export function AboutSection({ data = defaultAboutData }: AboutSectionProps) {
           ))}
         </div>
         <div>
-          <PhotoPlaceholder label={data.photoPlaceholderText} />
+          <GithubAvatarCard
+            avatarUrl={githubProfile?.avatarUrl}
+            profileUrl={githubProfile?.profileUrl}
+            name={githubProfile?.name || siteConfig.name}
+            label={siteConfig.githubBadgeLabel}
+          />
           <FactList facts={data.facts} />
         </div>
       </div>

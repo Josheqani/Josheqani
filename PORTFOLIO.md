@@ -43,7 +43,9 @@ src/
 │   ├── ui/               # Reusable presentation primitives
 │   │   ├── fact-item.tsx         # Single label/value item
 │   │   ├── fact-list.tsx         # List container for facts
-│   │   ├── photo-placeholder.tsx # Dashed box placeholder with responsive aspect ratio
+│   │   ├── github-avatar-card.tsx # GitHub avatar with next/image, motion fade, and synced badge
+│   │   ├── github-icon.tsx       # Inline SVG GitHub mark
+│   │   ├── photo-placeholder.tsx # Dashed box placeholder fallback
 │   │   ├── project-modal.tsx     # Expanding modal dialog with shared layout animation & focus trap
 │   │   ├── project-row.tsx       # Project row button (year, title, summary, spotlight effect)
 │   │   ├── scroll-progress.tsx   # Top viewport scroll progress bar with motion spring
@@ -54,7 +56,7 @@ src/
 │   └── sections/         # Full-width page sections
 │       ├── hero-section.tsx      # Main headline, lede paragraph, and status badge
 │       ├── work-section.tsx      # Client Component managing selected project & modal
-│       ├── about-section.tsx     # Bio paragraphs, photo placeholder, and facts
+│       ├── about-section.tsx     # Bio paragraphs, GitHub avatar card, and facts
 │       └── contact-section.tsx   # Contact heading, email link, and social links
 ├── data/                 # Typed static data (headings, bio facts, site configuration)
 │   ├── about.ts          # About paragraphs, facts, and photo label
@@ -65,6 +67,7 @@ src/
 │   └── site-config.ts    # Site name, metadata, and navigation items
 ├── lib/
 │   ├── cn.ts             # Lightweight zero-dependency className helper
+│   ├── github.ts         # Server-only GitHub avatar fetcher with fallback
 │   └── projects.ts       # Server-only loader: reads content/projects/, validates with Zod, parses Markdown
 └── types/                # TypeScript type definitions
 ```
@@ -130,18 +133,18 @@ Configure site identity, headings, and contact links via `.env.local`:
 # Site Identity
 NEXT_PUBLIC_SITE_NAME="Ali Josheqani"
 NEXT_PUBLIC_SITE_TITLE="Ali Josheqani"
-NEXT_PUBLIC_SITE_DESCRIPTION="Product designer and front-end developer portfolio."
+NEXT_PUBLIC_SITE_DESCRIPTION="Front-end developer from Iran with 3+ years of experience, building fast, accessible web apps."
 
 # Hero Section
 NEXT_PUBLIC_HERO_FIRST_NAME="Ali"
 NEXT_PUBLIC_HERO_LAST_NAME="Josheqani"
-NEXT_PUBLIC_HERO_STATUS="Building a budgeting app for freelancers"
+NEXT_PUBLIC_HERO_STATUS="Currently at ShaliCompany"
 
 # Contact Info
-NEXT_PUBLIC_CONTACT_EMAIL="hello@example.com"
-NEXT_PUBLIC_GITHUB_URL="https://github.com/ali-Josheqani"
-NEXT_PUBLIC_INSTAGRAM_URL="#"
-NEXT_PUBLIC_LINKEDIN_URL="#"
+NEXT_PUBLIC_CONTACT_EMAIL="josheqani@gmail.com"
+NEXT_PUBLIC_GITHUB_URL="https://github.com/Josheqani"
+NEXT_PUBLIC_TELEGRAM_URL="https://t.me/josheqani"
+NEXT_PUBLIC_LINKEDIN_URL="https://linkedin.com/in/josheqani"
 
 # Footer
 NEXT_PUBLIC_FOOTER_COPYRIGHT="© 2026 Ali Josheqani"
