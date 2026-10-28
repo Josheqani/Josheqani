@@ -19,12 +19,12 @@ I'm **Ali**, a front-end developer from Iran, building fast, user-friendly web a
 
 ###
 
-<img src="https://raw.githubusercontent.com/ali-josheghani/ali-josheghani/output/snake.svg" alt="Snake animation" />
+<img src="https://raw.githubusercontent.com/ali-Josheqani/ali-Josheqani/output/snake.svg" alt="Snake animation" />
 
 ###
 
 <div align="center">
-  <img src="https://profile-counter.glitch.me/ali-josheghani/count.svg?"  />
+  <img src="https://profile-counter.glitch.me/ali-Josheqani/count.svg?"  />
 </div>
 
 ###
