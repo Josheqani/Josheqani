@@ -35,7 +35,7 @@ Currently at ShaliCompany.
 -->
 <img height="160" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Josheqani&layout=compact&bg_color=0E0F12&title_color=C8F135&text_color=C9C7C0&border_color=2A2D33" />
 
-<img alt="Contribution snake" src="https://raw.githubusercontent.com/Josheqani/Josheqani/output/github-snake-dark.svg" />
+<img alt="Contribution snake" src="https://raw.githubusercontent.com/Josheqani/Josheqani/output/snake.svg" />
 
 </div>
 
