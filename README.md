@@ -10,16 +10,6 @@ I'm a front-end developer from Iran with 3+ years of professional experience, wo
 
 Currently at ShaliCompany.
 
-## Things I've built
-
-| Project | What it is | Stack |
-| --- | --- | --- |
-| [crm-light](https://github.com/Josheqani/crm-light) | Self-hosted CRM for Shopify stores, RTL-first dashboard | React 19, Cloudflare Workers, Neon |
-| [shopify-lite](https://github.com/Josheqani/shopify-lite) | Storefront and admin panel in the style of Shopify | Next.js 16, Drizzle, Clerk, shadcn/ui |
-| [checkpoint](https://github.com/Josheqani/checkpoint) | Goal tracker with SMS reminders and Jalali calendar | Next.js 16, Cloudflare Workers, D1 |
-| [motion-lab](https://github.com/Josheqani/motion-lab) | Interactive Framer Motion showcase | React 19, Vite, TypeScript |
-| [hub-pop](https://github.com/Josheqani/hub-pop) | Floating GitHub card widget, ~8kb, zero dependencies | TypeScript |
-
 ## Stack
 
 **Daily:** TypeScript, React, Next.js, Tailwind CSS
