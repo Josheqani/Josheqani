@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Newsreader } from "next/font/google";
 import { siteConfig } from "@/data/site-config";
 import { SmoothScrollProvider } from "@/components/layout/smooth-scroll-provider";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 import "./globals.css";
 
 const bricolageGrotesque = Bricolage_Grotesque({
@@ -35,6 +36,7 @@ export default function RootLayout({
       className={`${bricolageGrotesque.variable} ${newsreader.variable}`}
     >
       <body>
+        <ScrollProgress />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
