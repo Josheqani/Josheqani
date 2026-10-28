@@ -168,7 +168,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             layout="position"
             className="mt-3 text-soft max-w-[56ch] leading-relaxed text-[16px] sm:text-[18px]"
           >
-            {project.description}
+            {project.summary}
           </motion.p>
         </div>
 
@@ -185,20 +185,22 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {/* Dashed Image Placeholder */}
           <div
             className="grid place-items-center rounded-lg border-[1.5px] border-dashed border-border-dashed-subtle font-display text-[15px] font-medium text-muted aspect-[16/9] w-full bg-background/40"
-            aria-label={project.imagePlaceholderText || `${project.title} preview`}
+            aria-label={`${project.title} preview`}
           >
-            {project.imagePlaceholderText || `${project.title} preview`}
+            {`${project.title} preview`}
           </div>
 
           {/* Role */}
-          <div>
-            <span className="block font-display text-[13px] uppercase tracking-wider text-muted mb-1 font-semibold">
-              Role
-            </span>
-            <p className="text-foreground text-[16px] sm:text-[17px] font-medium m-0">
-              {project.role}
-            </p>
-          </div>
+          {project.role && (
+            <div>
+              <span className="block font-display text-[13px] uppercase tracking-wider text-muted mb-1 font-semibold">
+                Role
+              </span>
+              <p className="text-foreground text-[16px] sm:text-[17px] font-medium m-0">
+                {project.role}
+              </p>
+            </div>
+          )}
 
           {/* Tech Stack */}
           {project.tech && project.tech.length > 0 && (
@@ -219,15 +221,18 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           )}
 
-          {/* Long Description */}
-          <div>
-            <span className="block font-display text-[13px] uppercase tracking-wider text-muted mb-1.5 font-semibold">
-              About the project
-            </span>
-            <p className="text-soft text-[16px] sm:text-[18px] leading-relaxed m-0 font-serif">
-              {project.longDescription}
-            </p>
-          </div>
+          {/* Markdown Content (contentHtml) */}
+          {project.contentHtml && (
+            <div>
+              <span className="block font-display text-[13px] uppercase tracking-wider text-muted mb-2 font-semibold">
+                About the project
+              </span>
+              <div
+                dangerouslySetInnerHTML={{ __html: project.contentHtml }}
+                className="text-soft text-[16px] sm:text-[18px] leading-relaxed font-serif space-y-4 [&_p]:m-0 [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-4 [&_a]:transition-colors [&_a:hover]:opacity-80 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:text-soft [&_strong]:text-foreground [&_h3]:font-display [&_h3]:text-foreground [&_h3]:text-[20px] [&_h3]:font-medium [&_code]:font-mono [&_code]:text-[0.9em] [&_code]:bg-background [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:border [&_code]:border-border"
+              />
+            </div>
+          )}
 
           {/* Links */}
           {project.links && project.links.length > 0 && (

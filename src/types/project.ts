@@ -5,19 +5,18 @@ export interface ProjectLink {
 
 export interface Project {
   slug: string;
-  year: string;
   title: string;
-  description: string;
-  longDescription: string;
-  role: string;
-  tech: string[];
-  links: ProjectLink[];
-  imagePlaceholderText?: string;
-  href?: string;
+  year: number;
+  order: number;
+  summary: string;
+  role?: string;
+  tech?: string[];
+  links?: ProjectLink[];
+  draft?: boolean;
+  contentHtml: string;
 }
 
-export interface WorkData {
+export interface WorkSectionMeta {
   title: string;
   subtitle: string;
-  projects: Project[];
 }

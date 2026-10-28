@@ -2,25 +2,31 @@
 
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
-import type { Project, WorkData } from "@/types/project";
-import { workData as defaultWorkData } from "@/data/projects";
+import type { Project } from "@/types/project";
+import { workSectionMeta } from "@/data/projects";
 import { Section } from "@/components/layout/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectRow } from "@/components/ui/project-row";
 import { ProjectModal } from "@/components/ui/project-modal";
 
 interface WorkSectionProps {
-  data?: WorkData;
+  projects: Project[];
+  title?: string;
+  subtitle?: string;
 }
 
-export function WorkSection({ data = defaultWorkData }: WorkSectionProps) {
+export function WorkSection({
+  projects,
+  title = workSectionMeta.title,
+  subtitle = workSectionMeta.subtitle,
+}: WorkSectionProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <Section id="work">
-      <SectionHeading title={data.title} subtitle={data.subtitle} />
+      <SectionHeading title={title} subtitle={subtitle} />
       <div>
-        {data.projects.map((project) => (
+        {projects.map((project) => (
           <ProjectRow
             key={project.slug}
             project={project}

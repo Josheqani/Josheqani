@@ -57,7 +57,7 @@ export function ProjectRow({ project, onClick, className }: ProjectRowProps) {
         layout="position"
         className="m-0 text-soft max-w-[52ch] text-left"
       >
-        {project.description}
+        {project.summary}
       </motion.p>
     </motion.button>
   );
