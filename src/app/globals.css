@@ -42,6 +42,11 @@
   html {
     color-scheme: dark;
     scroll-padding-top: env(safe-area-inset-top, 0px);
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
   }
 
   body {
@@ -104,6 +109,31 @@
   .spotlight:hover::before {
     opacity: 1;
   }
+}
+
+.scrollbar-thin-accent {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+.scrollbar-thin-accent::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scrollbar-thin-accent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin-accent::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.scrollbar-thin-accent::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

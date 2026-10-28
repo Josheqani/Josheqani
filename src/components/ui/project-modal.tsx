@@ -119,7 +119,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         exit={shouldReduceMotion ? { opacity: 0, scale: 0.96 } : undefined}
         transition={springTransition}
         data-lenis-prevent="true"
-        className="relative z-10 w-full max-w-[720px] max-h-[85vh] overflow-y-auto rounded-xl border border-border bg-row-hover p-6 sm:p-8 shadow-2xl outline-none"
+        className="scrollbar-thin-accent relative z-10 w-full max-w-[720px] max-h-[85vh] overflow-y-auto rounded-xl border border-border bg-row-hover p-6 sm:p-8 shadow-2xl outline-none"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
