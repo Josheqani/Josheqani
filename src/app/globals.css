@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0E0F12;
+  --text: #F2F0EA;
+  --accent: #C8F135;
+  --text-soft: #C9C7C0;
+  --text-muted: #8A8D93;
+  --border: #2A2D33;
+  --border-dashed-subtle: #3A3E46;
+  --row-hover: #171A1F;
+  --page-padding: clamp(20px, 5vw, 64px);
+  --content-max-width: 1100px;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--text);
+  --color-text: var(--text);
+  --color-accent: var(--accent);
+  --color-soft: var(--text-soft);
+  --color-text-soft: var(--text-soft);
+  --color-muted: var(--text-muted);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-border-dashed-subtle: var(--border-dashed-subtle);
+  --color-row-hover: var(--row-hover);
+
+  --font-display: var(--font-bricolage), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
+
+  --spacing-page-pad: var(--page-padding);
+  --width-content-max: var(--content-max-width);
+  --max-width-content-max: var(--content-max-width);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 2vw, 20px);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+@keyframes status-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(200, 241, 53, 0.55);
+  }
+  70%, 100% {
+    box-shadow: 0 0 0 10px rgba(200, 241, 53, 0);
+  }
+}
+
+.animate-status-pulse {
+  animation: status-pulse 2.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
