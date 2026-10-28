@@ -37,7 +37,9 @@ src/
 │   │   ├── fact-item.tsx         # Single label/value item
 │   │   ├── fact-list.tsx         # List container for facts
 │   │   ├── photo-placeholder.tsx # Dashed box placeholder with responsive aspect ratio
-│   │   ├── project-row.tsx       # Project row (year, title, description, hover states)
+│   │   ├── project-modal.tsx     # Expanding modal dialog with shared layout animation & focus trap
+│   │   ├── project-row.tsx       # Project row button (year, title, description, spotlight effect)
+│   │   ├── scroll-progress.tsx   # Top viewport scroll progress bar with motion spring
 │   │   ├── section-heading.tsx   # Section h2 with optional subtitle
 │   │   ├── spotlight-link.tsx    # Interactive cursor-following spotlight wrapper
 │   │   ├── status-badge.tsx      # Live pulsing dot status badge
@@ -70,9 +72,18 @@ Add a new object to the `workData.projects` array:
 
 ```ts
 {
+  slug: "project-slug",
   year: "2026",
   title: "Project Title",
-  description: "Brief summary of what was designed, built, and shipped.",
+  description: "Brief summary shown on the project row.",
+  longDescription: "Detailed case study description revealed inside the modal.",
+  role: "Lead Product Designer & Front-end Developer",
+  tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+  links: [
+    { label: "Live Site", href: "https://..." },
+    { label: "GitHub", href: "https://github.com/..." },
+  ],
+  imagePlaceholderText: "Project preview label",
   href: "https://...",
 }
 ```

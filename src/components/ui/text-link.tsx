@@ -1,9 +1,9 @@
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
 export type TextLinkVariant = "bordered" | "email" | "nav" | "default";
 
-interface TextLinkProps {
+interface TextLinkProps extends ComponentPropsWithoutRef<"a"> {
   href: string;
   variant?: TextLinkVariant;
   className?: string;
@@ -17,6 +17,7 @@ export function TextLink({
   className,
   children,
   ariaLabel,
+  ...props
 }: TextLinkProps) {
   const variantStyles: Record<TextLinkVariant, string> = {
     email:
@@ -33,6 +34,7 @@ export function TextLink({
       href={href}
       aria-label={ariaLabel}
       className={cn(variantStyles[variant], className)}
+      {...props}
     >
       {children}
     </a>
