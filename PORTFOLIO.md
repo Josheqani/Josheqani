@@ -39,6 +39,7 @@ src/
 │   │   ├── photo-placeholder.tsx # Dashed box placeholder with responsive aspect ratio
 │   │   ├── project-row.tsx       # Project row (year, title, description, hover states)
 │   │   ├── section-heading.tsx   # Section h2 with optional subtitle
+│   │   ├── spotlight-link.tsx    # Interactive cursor-following spotlight wrapper
 │   │   ├── status-badge.tsx      # Live pulsing dot status badge
 │   │   └── text-link.tsx         # Underlined and bordered link variants
 │   └── sections/         # Full-width page sections

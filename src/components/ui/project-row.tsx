@@ -1,5 +1,6 @@
 import { cn } from "@/lib/cn";
 import type { Project } from "@/types/project";
+import { SpotlightLink } from "@/components/ui/spotlight-link";
 
 interface ProjectRowProps {
   project: Project;
@@ -8,7 +9,7 @@ interface ProjectRowProps {
 
 export function ProjectRow({ project, className }: ProjectRowProps) {
   return (
-    <a
+    <SpotlightLink
       href={project.href}
       className={cn(
         "group grid grid-cols-1 min-[761px]:grid-cols-[72px_1fr] gap-x-[20px] gap-y-[4px] py-[26px] px-0 min-[761px]:px-[16px] mx-0 min-[761px]:mx-[-16px] border-b border-border first:border-t no-underline transition-colors duration-200 hover:bg-row-hover",
@@ -24,6 +25,6 @@ export function ProjectRow({ project, className }: ProjectRowProps) {
       <p className="m-0 text-soft max-w-[52ch]">
         {project.description}
       </p>
-    </a>
+    </SpotlightLink>
   );
 }
