@@ -20,7 +20,7 @@ Currently at ShaliCompany.
 
 <div align="center">
 
-<!--
+<!-- 
 <img height="160" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=Josheqani&show_icons=true&hide_border=false&bg_color=0E0F12&title_color=C8F135&text_color=C9C7C0&icon_color=C8F135&border_color=2A2D33" />
 -->
 <img height="160" alt="Top languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Josheqani&layout=compact&bg_color=0E0F12&title_color=C8F135&text_color=C9C7C0&border_color=2A2D33" />
