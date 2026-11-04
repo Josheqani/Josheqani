@@ -31,9 +31,14 @@ content/
 src/
 ├── app/                  # Next.js App Router & core styling
 │   ├── globals.css       # Design tokens, theme variables, and global resets
-│   ├── layout.tsx        # Root HTML shell, Google Fonts, and SEO metadata
-│   └── page.tsx          # Server Component loading projects and assembling sections
+│   ├── icon.tsx          # Dynamic high-DPI favicon generator
+│   ├── layout.tsx        # Root HTML shell, fonts, SEO metadata, and JSON-LD
+│   ├── page.tsx          # Server Component loading projects and assembling sections
+│   ├── robots.ts         # Automated robots.txt route
+│   └── sitemap.ts        # Automated sitemap.xml route
 ├── components/
+│   ├── seo/              # Search engine optimization components
+│   │   └── person-json-ld.tsx # Schema.org Person and WebSite JSON-LD
 │   ├── layout/           # Structural layout wrappers
 │   │   ├── container.tsx              # Max width (1100px) and fluid padding clamp(20px, 5vw, 64px)
 │   │   ├── section.tsx                # Standard section wrapper with border-top & fluid padding
