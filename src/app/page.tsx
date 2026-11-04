@@ -1,5 +1,3 @@
-"use cache";
-
 import { getAllProjects } from "@/lib/projects";
 import { getAllExperiences } from "@/lib/experiences";
 import { Container } from "@/components/layout/container";
