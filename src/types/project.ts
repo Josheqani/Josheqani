@@ -13,6 +13,7 @@ export interface Project {
   tech?: string[];
   links?: ProjectLink[];
   draft?: boolean;
+  private?: boolean;
   contentHtml: string;
 }
 

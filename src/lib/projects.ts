@@ -24,6 +24,7 @@ const projectFrontmatterSchema = z.object({
     )
     .optional(),
   draft: z.boolean().optional().default(false),
+  private: z.boolean().optional().default(false),
 });
 
 const projectsDirectory = path.join(process.cwd(), "content", "projects");
@@ -46,6 +47,7 @@ async function parseProjectFile(fileName: string): Promise<Project> {
   const slug = fileName.replace(/\.md$/, "");
   const processedContent = await remark().use(html).process(content);
   const contentHtml = String(processedContent);
+  const isPrivate = parsed.data.private;
 
   return {
     slug,
@@ -57,6 +59,7 @@ async function parseProjectFile(fileName: string): Promise<Project> {
     tech: parsed.data.tech,
     links: parsed.data.links,
     draft: parsed.data.draft,
+    private: isPrivate,
     contentHtml,
   };
 }

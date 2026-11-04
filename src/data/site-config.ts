@@ -16,6 +16,7 @@ export const siteConfig: SiteConfig = {
   githubBadgeLabel: "Synced from GitHub",
   navItems: [
     { label: "Work", href: "#work" },
+    { label: "Experience", href: "#experience" },
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ],

@@ -148,13 +148,34 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {/* Shared Layout Elements */}
         <div className="pr-10">
-          <motion.span
-            layoutId={shouldReduceMotion ? undefined : `project-year-${project.slug}`}
-            layout="position"
-            className="block text-muted [font-variant-numeric:oldstyle-nums] text-[15px] sm:text-[16px] mb-2"
-          >
-            {project.year}
-          </motion.span>
+          <div className="flex items-center gap-3 mb-2">
+            <motion.span
+              layoutId={shouldReduceMotion ? undefined : `project-year-${project.slug}`}
+              layout="position"
+              className="block text-muted [font-variant-numeric:oldstyle-nums] text-[15px] sm:text-[16px]"
+            >
+              {project.year}
+            </motion.span>
+            {project.private && (
+              <span className="inline-flex items-center gap-1 rounded-full border border-border bg-background/80 px-2 py-0.5 font-display text-[11px] font-medium text-muted uppercase tracking-wider">
+                <svg
+                  width="11"
+                  height="11"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                Private
+              </span>
+            )}
+          </div>
           <motion.h2
             id={`project-title-${project.slug}`}
             layoutId={shouldReduceMotion ? undefined : `project-title-${project.slug}`}
@@ -235,7 +256,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           )}
 
           {/* Links */}
-          {project.links && project.links.length > 0 && (
+          {project.links && project.links.length > 0 ? (
             <div className="pt-2 flex flex-wrap gap-4 items-center">
               {project.links.map((link) => (
                 <TextLink
@@ -257,7 +278,27 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </TextLink>
               ))}
             </div>
-          )}
+          ) : project.private ? (
+            <div className="pt-2">
+              <span className="inline-flex items-center gap-2 text-[14px] text-muted font-display">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                Private project — source code and live link are confidential.
+              </span>
+            </div>
+          ) : null}
         </motion.div>
       </motion.div>
     </div>

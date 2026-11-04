@@ -41,6 +41,7 @@ src/
 │   │   ├── site-footer.tsx            # Bottom footer with dynamic copyright
 │   │   └── smooth-scroll-provider.tsx # Client-side Lenis smooth scroll provider
 │   ├── ui/               # Reusable presentation primitives
+│   │   ├── experience-item.tsx   # Timeline experience item with dot, pulse, and active card
 │   │   ├── fact-item.tsx         # Single label/value item
 │   │   ├── fact-list.tsx         # List container for facts
 │   │   ├── github-avatar-card.tsx # GitHub avatar with next/image, motion fade, and synced badge
@@ -56,11 +57,13 @@ src/
 │   └── sections/         # Full-width page sections
 │       ├── hero-section.tsx      # Main headline, lede paragraph, and status badge
 │       ├── work-section.tsx      # Client Component managing selected project & modal
+│       ├── experience-section.tsx # Timeline list of work experience and active company card
 │       ├── about-section.tsx     # Bio paragraphs, GitHub avatar card, and facts
 │       └── contact-section.tsx   # Contact heading, email link, and social links
 ├── data/                 # Typed static data (headings, bio facts, site configuration)
 │   ├── about.ts          # About paragraphs, facts, and photo label
 │   ├── contact.ts        # Email and social media links
+│   ├── experience.ts     # Work experience timeline and highlights
 │   ├── footer.ts         # Footer copyright configuration
 │   ├── hero.ts           # Headline lines, lede copy, and status
 │   ├── projects.ts       # Work section title and subtitle
@@ -115,6 +118,7 @@ This is the long-form case study or description. It supports full Markdown (para
 - `role` (*string, optional*): Your contribution or job title.
 - `tech` (*string[], optional*): List of technologies used, rendered as tags.
 - `links` (*array of { label, href }, optional*): Links rendered at the bottom of the modal.
+- `private` (*boolean, optional, default: false*): Displays a Private badge on the row and modal. If `links` are provided, they will still render (e.g. for a live demo or restricted repo); if omitted, a discreet confidential note is shown instead.
 - `draft` (*boolean, optional, default: false*): When set to `true`, the project is completely hidden from the site.
 
 #### Reordering Projects
@@ -123,7 +127,40 @@ To change the order of projects on the page, update the `order` number in the fr
 #### Build-Time Safety
 All frontmatter is strictly validated using **Zod** during the build (`src/lib/projects.ts`). If any required field is missing or has the wrong type, the build fails immediately with a clear error pointing directly to the file and invalid field.
 
-### 2. Editing Bio & Facts (`src/data/about.ts`)
+### 2. Adding & Managing Experiences (`content/experiences/`)
+
+Experiences are also completely dynamic and file-based. Adding an experience means adding **one Markdown file** inside `content/experiences/` with zero code changes.
+
+#### Adding an Experience
+Create a file `content/experiences/<company-slug>.md` (e.g. `shali-company.md`):
+
+```markdown
+---
+company: "ShaliCompany"
+role: "Front-end Developer"
+period: "2024 – Now"
+order: 1
+active: true
+activeLabel: "Currently here"
+highlights:
+  - "Building and maintaining product interfaces with React and Next.js."
+  - "Working with the product lead to turn user problems into shipped features."
+draft: false
+---
+```
+
+#### Frontmatter Fields
+- `company` (*string, required*): Company or organization name.
+- `role` (*string, required*): Job title / role.
+- `period` (*string, required*): Duration (e.g. `2024 – Now` or `2022 – 2024`).
+- `order` (*number, required*): Order on the timeline, lowest first (e.g. `1`, `2`, `3`).
+- `active` (*boolean, optional, default: false*): If `true`, renders as the highlighted gradient card with pulsing dot.
+- `activeLabel` (*string, optional*): Pill badge label (e.g. `Currently here`).
+- `highlights` (*string[], optional*): Bullet points rendered with `–` dashes inside the card.
+- `description` (*string, optional*): One-line summary for standard past timeline items.
+- `draft` (*boolean, optional, default: false*): If `true`, hides the item from the site.
+
+### 3. Editing Bio & Facts (`src/data/about.ts`)
 Update paragraphs and personal facts (tools, languages, availability, location) directly in this file.
 
 ### 3. Environment Variables (`.env.local`)
